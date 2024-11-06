@@ -70,7 +70,11 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, -90);
         }
-
+       
+        
+        //Arreglar apuntado hacia arriba, el apuntado ahcia arriba debe realizarse mientras el player se mueve.
+        //Flip con Desync al momento de apuntar, tiempo de retardo de 0,5s.
+        //Disparo con el espacio
 
     }
     
