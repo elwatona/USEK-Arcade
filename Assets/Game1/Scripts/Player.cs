@@ -9,20 +9,15 @@ public class Player : MonoBehaviour
     public Transform player;
     GroundChecker gc;
     Rigidbody2D rb;
-  
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
     }
-
-    // Update is called once per frame
     void Update()
     {
        
     }
-   
     public void Move(Vector2 input)
     {
         x = input.x;
@@ -38,14 +33,11 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-
     }
-
     void MoveT()
     {
         Vector3 direccion = new Vector2(x, 0);
         player.position += direccion * spd * Time.deltaTime;
-        
     }
 
     void Jump()
@@ -70,8 +62,5 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, -90);
         }
-
-
     }
-    
 }
