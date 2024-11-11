@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     }
     void Flip(Vector2 direccion)
     {
+
         if (direccion == Vector2.right)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -72,7 +73,7 @@ public class Player : MonoBehaviour
         }
        
         
-        //Arreglar apuntado hacia arriba, el apuntado ahcia arriba debe realizarse mientras el player se mueve.
+        //Arreglar apuntado hacia arriba, el apuntado hacia arriba debe realizarse mientras el player se mueve.
         //Flip con Desync al momento de apuntar, tiempo de retardo de 0,5s.
         //Disparo con el espacio
 

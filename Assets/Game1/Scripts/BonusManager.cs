@@ -7,7 +7,7 @@ public class BonusManager : MonoBehaviour
 {
     public float x, y;
     public float spd;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI textPoint;
     public float timer;
     public float time;
     public bool isTimerOn = true;
@@ -32,6 +32,7 @@ public class BonusManager : MonoBehaviour
     void GanarPuntaje()
     {
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
+
     }
     void TimerTime()
     {
