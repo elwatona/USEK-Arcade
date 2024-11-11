@@ -14,17 +14,6 @@ namespace Arcade
             string scene = SceneManager.GetActiveScene().name;
             gameId = scene.Split("_")[0];
             GameData.CurrentGameId = gameId;
-
-            Debug.Log($"current id: {GameData.CurrentGameId}");
-            Debug.Log($"current HP: {GameData.GetInt("HP")}");
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                GameSceneManager.NextLevel();
-            if (Input.GetKeyDown(KeyCode.Space))
-                GameData.Set("HP", 1,true);
         }
     }
 #endif
