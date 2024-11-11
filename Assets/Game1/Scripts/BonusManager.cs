@@ -27,7 +27,7 @@ public class BonusManager : MonoBehaviour
 
     void PalancaGiratoria()
     {
-        //Hacer que los jgadores puedan mover la palanca de manera Horizontal o vertical
+        //Hacer que los jugadores puedan mover la palanca de manera Horizontal o vertical
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical"); 
         Vector3 dir = new Vector3(x, y,0);
@@ -36,6 +36,7 @@ public class BonusManager : MonoBehaviour
         //Vector3.left;
         //Vector3.up;
         //Vector3.down;
+        //Hacer que x no sume con y para que no haya movimiento en diagonal
     }
     void GanarPuntaje()
     {
@@ -58,6 +59,7 @@ public class BonusManager : MonoBehaviour
     void TimerTime()
     {
         //Hacer que espere 3 segundo antes de comenzar el bonus, el bonus tendra un total de 30 segundos.
+        //Junto a la función TimerTime(), la funcion end y start bonus les dara la orden a cada uno.
         isTimerOn = true;
         time = 0;
         time += Time.deltaTime;
@@ -87,10 +89,10 @@ public class BonusManager : MonoBehaviour
     }
     void EmpezarBonus()
     {
-
+        //EmpezarElBonus y la escena.
     }
     void TerminarBonus()
     {
-
+        //Acabar con el minijuego y cambiar escena;
     }
 }
