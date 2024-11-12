@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public GameObject bala;
     GroundChecker gc;
     Rigidbody2D rb;
-    Vector2 Dbala;
+    Vector2 dBala;
     bool isFlipped;
   
     // Start is called before the first frame update
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     {
         GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
         Rigidbody2D rbBala = newBala.GetComponent<Rigidbody2D>();
-        rbBala.AddForce(Dbala.normalized * poderBala, ForceMode2D.Impulse);
+        rbBala.AddForce(dBala.normalized * poderBala, ForceMode2D.Impulse);
 
     }
 
