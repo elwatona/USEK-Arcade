@@ -7,15 +7,15 @@ public class BonusManager : MonoBehaviour
 {
     public TextMeshProUGUI textTime;
     public TextMeshProUGUI scoreTextPlayer1, scoreTextPlayer2;
-    private Rigidbody2D rb;
     public float timer;
+    [SerializeField] private float _timeLimit;
     public float time;
     public bool isTimerOn = true;
     private int puntaje1, puntaje2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        isTimerOn = true;
     }
 
     // Update is called once per frame
@@ -29,21 +29,22 @@ public class BonusManager : MonoBehaviour
     {
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
       //player.transform += 1, MostrarPuntaje(); ??
-        
+        //Hacer un collider en un objeto invicible para que al chocar con el analogo del jugador puedan ganar puntos
 
     }
     void TimerTime()
     {
+        if (!isTimerOn) return;
         //Hacer que espere 3 segundo antes de comenzar el bonus, el bonus tendra un total de 30 segundos.
         //Junto a la función TimerTime(), la funcion end y start bonus les dara la orden a cada uno.
         
-        isTimerOn = true;
+        
         time = 0;
         timer += Time.deltaTime;
-        if (timer>= 30f)
+        if (timer>= _timeLimit)
         {
             isTimerOn = false;
-            time = 0;
+            timer = 0;
         }
         textTime.text = "Timer: " + timer;
     }
@@ -75,4 +76,5 @@ public class BonusManager : MonoBehaviour
     {
         //Acabar con el minijuego y cambiar escena en 3 seg;
     }
+    
 }
