@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BonusManager : MonoBehaviour
 {
     public TextMeshProUGUI textTime;
-    public TextMeshProUGUI scoreTextPlayer1, scoreTextPlayer2;
+    public TextMeshProUGUI scoreTextPlayer1, scoreTextPlayer2, end, scoreP1, scoreP2;
     public float timer;
     [SerializeField] private float _timeLimit;
     public float time;
-    public bool isTimerOn = true;
+    private bool isTimerOn = true;
     private int puntaje1, puntaje2;
     // Start is called before the first frame update
     void Start()
@@ -21,16 +22,23 @@ public class BonusManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GanarPuntaje();
+        
         TimerTime();
         
     }
-    void GanarPuntaje()
+    public void GanarPuntajeP1()
     {
+        scoreTextPlayer2.text = "Player 1: " + 1;
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
-      //player.transform += 1, MostrarPuntaje(); ??
         //Hacer un collider en un objeto invicible para que al chocar con el analogo del jugador puedan ganar puntos
+        //En el objeto vacio crear un script de OnTriggerEnter en donde el analogo del jugador llame al BonusManager GanarPuntos().
+        //Implementar estructura de la funcion TimerTime().
 
+
+    }
+    public void GanarPuntajeP2()
+    {
+        scoreTextPlayer2.text = "Player 2: " + 1;
     }
     void TimerTime()
     {
@@ -45,6 +53,7 @@ public class BonusManager : MonoBehaviour
         {
             isTimerOn = false;
             timer = 0;
+            end.text = "BONUS COMPLETE   PLAYER 1: " + puntaje1 + " PLAYER 2: " + puntaje2;
         }
         textTime.text = "Timer: " + timer;
     }
@@ -71,10 +80,12 @@ public class BonusManager : MonoBehaviour
     void EmpezarBonus()
     {
         //EmpezarElBonus.
+        //Dejarlo al final.
     }
     void TerminarBonus()
     {
         //Acabar con el minijuego y cambiar escena en 3 seg;
+        //Dejarlo al final.
     }
     
 }

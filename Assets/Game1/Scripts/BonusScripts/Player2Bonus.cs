@@ -15,6 +15,10 @@ public class Player2Bonus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        OnJoystickP1();
+    }
+    void OnJoystickP1()
+    {
         float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
         float movimientoVertical = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(movimientoHorizontal * spd, movimientoVertical * spd);
