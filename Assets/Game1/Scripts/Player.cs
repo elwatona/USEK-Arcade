@@ -6,14 +6,16 @@ public class Player : MonoBehaviour
 {
     public float spd,power,poderBala;
     float x, y;
+
     public Transform player,spawn;
     public GameObject bala;
     GroundChecker gc;
     Rigidbody2D rb;
+
     Vector2 dBala;
     bool isFlipped;
-  
-    // Start is called before the first frame update
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
