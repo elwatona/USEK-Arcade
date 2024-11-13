@@ -5,14 +5,13 @@ using TMPro;
 
 public class BonusManager : MonoBehaviour
 {
-    private float x, y;
-    public float spd;
     public TextMeshProUGUI textTime;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI scoreTextPlayer1, scoreTextPlayer2;
+    private Rigidbody2D rb;
     public float timer;
     public float time;
     public bool isTimerOn = true;
-    public int puntaje1, puntaje2;
+    private int puntaje1, puntaje2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,37 +21,14 @@ public class BonusManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GanarPuntaje();
+        TimerTime();
         
-    }
-
-    void PalancaGiratoria()
-    {
-        //Hacer que los jugadores puedan mover la palanca de manera Horizontal o vertical
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical"); 
-        Vector3 dir = new Vector3(x, y,0);
-        transform.position += dir;
-        // Vector3.right;
-        //Vector3.left;
-        //Vector3.up;
-        //Vector3.down;
-        //Hacer que x no sume con y para que no haya movimiento en diagonal
     }
     void GanarPuntaje()
     {
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
-        bool playerPoint1 = false;
-        bool playerPoint2 = false;
-        while(playerPoint1 == true)
-        {
-            puntaje1 = 0;
-            puntaje1++;
-        }
-        while (playerPoint2 == true)
-        {
-            puntaje2 = 0;
-            puntaje2++;
-        }
+      //player.transform += 1, MostrarPuntaje(); ??
         
 
     }
@@ -60,14 +36,16 @@ public class BonusManager : MonoBehaviour
     {
         //Hacer que espere 3 segundo antes de comenzar el bonus, el bonus tendra un total de 30 segundos.
         //Junto a la función TimerTime(), la funcion end y start bonus les dara la orden a cada uno.
+        
         isTimerOn = true;
         time = 0;
-        time += Time.deltaTime;
-        if (time>= 30f)
+        timer += Time.deltaTime;
+        if (timer>= 30f)
         {
             isTimerOn = false;
             time = 0;
         }
+        textTime.text = "Timer: " + timer;
     }
     void Orientacion(Vector2 Direccion)
     {
@@ -86,13 +64,15 @@ public class BonusManager : MonoBehaviour
     void MostrarPuntaje()
     {
         //El TextMeshPro debe mostrar el puntaje tanto del player 1 como del player 2;
+        scoreTextPlayer1.text = "Player 1:" + puntaje1;
+        scoreTextPlayer2.text = "Player 2:" + puntaje2;
     }
     void EmpezarBonus()
     {
-        //EmpezarElBonus y la escena.
+        //EmpezarElBonus.
     }
     void TerminarBonus()
     {
-        //Acabar con el minijuego y cambiar escena;
+        //Acabar con el minijuego y cambiar escena en 3 seg;
     }
 }
