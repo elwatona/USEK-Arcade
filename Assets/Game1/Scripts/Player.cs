@@ -21,13 +21,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Disparar();
-        }
-    }
 
     public void Move(Vector2 input)
     {
@@ -44,7 +37,6 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-
     }
 
     void MoveT()
@@ -53,12 +45,12 @@ public class Player : MonoBehaviour
         player.position += direccion * spd * Time.deltaTime;
         
     }
-    void Disparar()
+    public void Disparar(bool input)
     {
+        if (!input) return; //En caso que no se presione la tecla, hara return.
         GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
         Rigidbody2D rbBala = newBala.GetComponent<Rigidbody2D>();
         rbBala.AddForce(dBala.normalized * poderBala, ForceMode2D.Impulse);
-
     }
 
     void Jump()

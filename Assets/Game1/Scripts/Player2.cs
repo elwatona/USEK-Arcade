@@ -18,15 +18,6 @@ public class Player2 : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Escudo();
-        }
-    }
     public void Move2(Vector2 input)
     {
         x = input.x;
@@ -38,7 +29,7 @@ public class Player2 : MonoBehaviour
     }
     public void JumpInput2(bool jumpBotton)
     {
-        if(jumpBotton == true && gc.estaTocando || Input.GetKeyDown(KeyCode.LeftShift))
+        if(jumpBotton == true && gc.estaTocando)            
         {
             Jump2();
         }
@@ -48,9 +39,10 @@ public class Player2 : MonoBehaviour
         Vector3 direccion2 = new Vector2(x, 0);
         player2.position += direccion2 * spd2 * Time.deltaTime;
     }
-    void Escudo()
+    public void Escudo(bool value)
     {
-
+        Debug.Log(value);
+        escudo.SetActive(value);
     }
     void Jump2()
     {

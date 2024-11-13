@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float spd;
     public float detectionRadius;
 
-    public Transform player;
+    public Transform player,player2;
      //bool precipicio = true
      //float distanciaRaycastPrecipicio;
     Rigidbody2D rb;
