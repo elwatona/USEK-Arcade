@@ -21,6 +21,6 @@ public class Player2Bonus : MonoBehaviour
     {
         float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
         float movimientoVertical = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(movimientoHorizontal * spd, movimientoVertical * spd);
+        rb.velocity = new Vector2(movimientoHorizontal * 0f, movimientoVertical * spd);
     }
 }
