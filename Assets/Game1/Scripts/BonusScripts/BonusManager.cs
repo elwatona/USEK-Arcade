@@ -28,7 +28,7 @@ public class BonusManager : MonoBehaviour
     }
     public void GanarPuntajeP1()
     {
-        scoreTextPlayer2.text = "Player 1: " + 1;
+        scoreTextPlayer1.text = "Player 1: " + scoreP1 + 1;
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
         //Hacer un collider en un objeto invicible para que al chocar con el analogo del jugador puedan ganar puntos
         //En el objeto vacio crear un script de OnTriggerEnter en donde el analogo del jugador llame al BonusManager GanarPuntos().
@@ -74,7 +74,7 @@ public class BonusManager : MonoBehaviour
     void MostrarPuntaje()
     {
         //El TextMeshPro debe mostrar el puntaje tanto del player 1 como del player 2;
-        scoreTextPlayer1.text = "Player 1:" + puntaje1;
+        scoreTextPlayer1.text = "Player 1:" + scoreP1;
         scoreTextPlayer2.text = "Player 2:" + puntaje2;
     }
     void EmpezarBonus()

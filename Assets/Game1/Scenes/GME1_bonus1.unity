@@ -1042,12 +1042,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5852952, y: 0.60257447, z: 1}
+  m_Center: {x: 0.04031849, y: 0.07775718, z: 0}
 --- !u!1 &1481598030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1500,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625684070}
   m_CullTransparentMesh: 1
+--- !u!1 &1956135979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
+  m_PrefabInstance: {fileID: 8858518575529467975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1956135983
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956135979}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2144486697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 1875074673256175160, guid: c12ea758c8233e7479d3ec60b7ee1b30, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8666450434986572288, guid: c12ea758c8233e7479d3ec60b7ee1b30, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.002
@@ -1739,6 +1775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4855571504123516391, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
       propertyPath: m_Name
       value: Player2
@@ -1746,7 +1786,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956135983}
   m_SourcePrefab: {fileID: 100100000, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

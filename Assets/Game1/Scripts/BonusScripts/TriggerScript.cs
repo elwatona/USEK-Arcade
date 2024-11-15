@@ -16,9 +16,14 @@ public class TriggerScript : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
-        bM.GanarPuntajeP1();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            bM.GanarPuntajeP1();
+            
+        }
+       
     }
+   
 }
