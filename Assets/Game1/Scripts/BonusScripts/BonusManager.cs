@@ -17,6 +17,7 @@ public class BonusManager : MonoBehaviour
     void Start()
     {
         isTimerOn = true;
+        
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class BonusManager : MonoBehaviour
     }
     public void GanarPuntajeP1()
     {
-        scoreTextPlayer1.text = "Player 1: " + scoreP1 + 1;
+        scoreP1.text = " "+ 1;
         //Los jugadores ganaran 1 punto por cada moviemiento completo realizado (izquierda a derecha || Arriba a Abajo)
         //Hacer un collider en un objeto invicible para que al chocar con el analogo del jugador puedan ganar puntos
         //En el objeto vacio crear un script de OnTriggerEnter en donde el analogo del jugador llame al BonusManager GanarPuntos().
@@ -38,7 +39,7 @@ public class BonusManager : MonoBehaviour
     }
     public void GanarPuntajeP2()
     {
-        scoreTextPlayer2.text = "Player 2: " + 1;
+        scoreP2.text = " " + 1;
     }
     void TimerTime()
     {
@@ -54,6 +55,9 @@ public class BonusManager : MonoBehaviour
             isTimerOn = false;
             timer = 0;
             end.text = "BONUS COMPLETE   PLAYER 1: " + puntaje1 + " PLAYER 2: " + puntaje2;
+            
+            
+
         }
         textTime.text = "Timer: " + timer;
     }
@@ -82,10 +86,7 @@ public class BonusManager : MonoBehaviour
         //EmpezarElBonus.
         //Dejarlo al final.
     }
-    void TerminarBonus()
-    {
-        //Acabar con el minijuego y cambiar escena en 3 seg;
-        //Dejarlo al final.
-    }
-    
+   
+   
+
 }

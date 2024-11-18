@@ -18,6 +18,7 @@ public class TriggerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+            Debug.Log(other.name);
         if (other.gameObject.CompareTag("Player"))
         {
             bM.GanarPuntajeP1();
