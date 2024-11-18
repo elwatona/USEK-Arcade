@@ -41,7 +41,7 @@ public class Player2 : MonoBehaviour
     }
     public void Escudo(bool value)
     {
-        Debug.Log(value);
+        //Debug.Log(value);
         escudo.SetActive(value);
     }
     void Jump2()
