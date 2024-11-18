@@ -11,34 +11,39 @@ public class InputManager : MonoBehaviour
         [SerializeField] private UnityEvent<bool>[] _buttonEvents;
         [SerializeField] private UnityEvent<Vector2> _joystickEvent;
         private string _playerPrefix;
-        private Vector2 _joystick => new Vector2(Input.GetAxis(_playerPrefix +  "Horizontal"), Input.GetAxis(_playerPrefix + "Vertical"));
+        private Vector2 _joystick => new Vector2(Input.GetAxis(_playerPrefix + "Horizontal"), Input.GetAxis(_playerPrefix + "Vertical"));
+
         public void SetPrefix(string value)
         {
             _playerPrefix = value;
         }
+
         private bool GetButton(int index)
         {
-            switch(index)
+            switch (index)
             {
                 case 0:
-                    return Input.GetButtonDown(_playerPrefix + "Fire1");
+                    return Input.GetButton(_playerPrefix + "Fire1");
                 case 1:
-                    return Input.GetButtonDown(_playerPrefix + "Fire2");
-                default:  
-                    Debug.LogAssertion("El input ingresado no está registrado."); 
+                    return Input.GetButton(_playerPrefix + "Fire2");
+                default:
+                    Debug.LogAssertion("El input ingresado no está registrado.");
                     return false;
             }
         }
+
         public void CheckButtons()
         {
             for (int i = 0; i < _buttonEvents.Length; i++)
             {
-                if(GetButton(i)) _buttonEvents[i]?.Invoke(GetButton(i));
+                _buttonEvents[i]?.Invoke(GetButton(i));
             }
         }
+
         public void CheckJoystick()
         {
-            if(_joystick != Vector2.zero)  _joystickEvent?.Invoke(_joystick);
+            if (_joystick != Vector2.zero)
+                _joystickEvent?.Invoke(_joystick);
         }
     }
     [SerializeField] private bool _canDebug;

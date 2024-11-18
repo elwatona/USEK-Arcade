@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float spd,power;
+    public float spd,power,poderBala;
     float x, y;
-    public Transform player;
+
+    public Transform player,spawn;
+    public GameObject bala;
     GroundChecker gc;
     Rigidbody2D rb;
-  
-    // Start is called before the first frame update
+
+    Vector2 dBala;
+    bool isFlipped;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-   
     public void Move(Vector2 input)
     {
         x = input.x;
@@ -38,7 +37,6 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-
     }
 
     void MoveT()
@@ -47,6 +45,13 @@ public class Player : MonoBehaviour
         player.position += direccion * spd * Time.deltaTime;
         
     }
+    public void Disparar(bool input)
+    {
+        if (!input) return; //En caso que no se presione la tecla, hara return.
+        GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
+        Rigidbody2D rbBala = newBala.GetComponent<Rigidbody2D>();
+        rbBala.AddForce(dBala.normalized * poderBala, ForceMode2D.Impulse);
+    }
 
     void Jump()
     {
@@ -54,29 +59,33 @@ public class Player : MonoBehaviour
     }
     void Flip(Vector2 direccion)
     {
-
-        if (direccion == Vector2.right)
+        switch (direccion)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            case Vector2 left when left.Equals(Vector2.left):
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+                isFlipped = true;
+                break;
+            case Vector2 right when right.Equals(Vector2.right):
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                isFlipped = false;
+                break;
+            case Vector2 up when up.Equals(Vector2.up):
+                if (isFlipped)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 45);
+                    return;
+                }
+                transform.rotation = Quaternion.Euler(0, 0, 45);
+                break;
+            case Vector2 down when down.Equals(Vector2.down):
+                if(isFlipped)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, -45);
+                    return;
+                }
+                transform.rotation = Quaternion.Euler(0, 0, -45);
+                break;
         }
-        else if (direccion == Vector2.left)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if(direccion == Vector2.up)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 90);
-        }
-        else if(direccion == Vector2.down)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, -90);
-        }
-       
-        
-        //Arreglar apuntado hacia arriba, el apuntado hacia arriba debe realizarse mientras el player se mueve.
-        //Flip con Desync al momento de apuntar, tiempo de retardo de 0,5s.
-        //Disparo con el espacio
-
     }
     
 }
