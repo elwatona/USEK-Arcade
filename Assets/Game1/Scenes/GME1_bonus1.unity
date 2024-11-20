@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boton: {fileID: 706004671}
-  tiempoDeEspera: 2
+  tiempoDeEspera: 30
 --- !u!4 &149989761
 Transform:
   m_ObjectHideFlags: 0
@@ -2177,7 +2177,7 @@ MonoBehaviour:
   scoreP1: {fileID: 228415364}
   scoreP2: {fileID: 2144486698}
   timer: 0
-  _timeLimit: 2
+  _timeLimit: 30
   time: 0
   triggerScript: {fileID: 1433776518}
   triggerP2: {fileID: 115762695}
