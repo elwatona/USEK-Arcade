@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player2 : MonoBehaviour
 {
     public float spd2, power2;
-    public float lifePlater2, currentLifePlayer2;
+    public float maxLifePlater2, currentLifePlayer2;
     float x, y;
     public Transform player2, spawn;
     public GameObject escudo;
@@ -19,14 +19,14 @@ public class Player2 : MonoBehaviour
     {
         rb2 = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
-        currentLifePlayer2 = lifePlater2;
+        currentLifePlayer2 = maxLifePlater2;
     }
     public void Move2(Vector2 input)
     {
         x = input.x;
         if(x != 0)
         {
-            MoveT2();
+            MoveTarget2();
         }
         Flip2(input);
     }
@@ -37,7 +37,7 @@ public class Player2 : MonoBehaviour
             Jump2();
         }
     }
-    void MoveT2()
+    void MoveTarget2()
     {
         Vector3 direccion2 = new Vector2(x, 0);
         player2.position += direccion2 * spd2 * Time.deltaTime;

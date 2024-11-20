@@ -10,13 +10,14 @@ public class EnemyApuntar : MonoBehaviour
     public Transform posicionBala;
     public GameObject prefabBall;
     public float poderbala = 7f;
+    public int maxCount;
     public int contador;
     Vector2 direccion,direccion2;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        contador = 0;
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class EnemyApuntar : MonoBehaviour
         if (radioDisparo >= direccion.magnitude)
         {
             contador++;
-            if (contador >= 180)
+            if (contador >= maxCount)
             {
                 Dispararbala();
                 contador = 0;
@@ -40,19 +41,20 @@ public class EnemyApuntar : MonoBehaviour
         direccion2 = player2.position - transform.position;
         if (radioApuntar >= direccion.magnitude)
         {
-            transform.right = -direccion;
+            transform.right = direccion;
         }
         if(radioApuntar >= direccion2.magnitude)
         {
-            transform.right = -direccion2;
+            transform.right = direccion2;
         }
 
     }
+
     void Dispararbala()
     {
         GameObject newbala = Instantiate(prefabBall, posicionBala.position, transform.rotation);
         Rigidbody2D rbbala = newbala.GetComponent<Rigidbody2D>();
-        rbbala.AddForce(direccion.normalized * poderbala, ForceMode2D.Impulse);
+        //rbbala.AddForce(direccion.normalized * poderbala, ForceMode2D.Impulse);
     }
     private void OnDrawGizmos()
 

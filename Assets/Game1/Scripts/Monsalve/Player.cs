@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float spd,power;
-    public float lifePlayer, currenLifePlayer;
+    public float maxLifePlayer, currenLifePlayer;
     float x, y;
 
     public Transform player,spawn;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gc = GetComponentInChildren<GroundChecker>();
-        currenLifePlayer = lifePlayer;
+        currenLifePlayer = maxLifePlayer;
     }
 
     public void Move(Vector2 input)
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         x = input.x;
         if (x != 0)
         {
-            MoveT();
+            MoveTarget();
         }
         Flip(input);
     }
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void MoveT()
+    void MoveTarget()
     {
         Vector3 direccion = new Vector2(x, 0);
         player.position += direccion * spd * Time.deltaTime;
