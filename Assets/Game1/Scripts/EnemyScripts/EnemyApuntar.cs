@@ -10,23 +10,24 @@ public class EnemyApuntar : MonoBehaviour
     public Transform posicionBala;
     public GameObject prefabBall;
     public float poderbala = 7f;
+    public int maximoContador;
     public int contador;
-    Vector2 direccion,direccion2;
+    Vector2 direccionParaJugador1,direccionParaJugador2;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        contador = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         ApuntarEnemy();
-        if (radioDisparo >= direccion.magnitude)
+        if (radioDisparo >= direccionParaJugador1.magnitude)
         {
             contador++;
-            if (contador >= 180)
+            if (contador >= maximoContador)
             {
                 Dispararbala();
                 contador = 0;
@@ -36,23 +37,24 @@ public class EnemyApuntar : MonoBehaviour
     }
     void ApuntarEnemy()
     {
-        direccion = player.position - transform.position;
-        direccion2 = player2.position - transform.position;
-        if (radioApuntar >= direccion.magnitude)
+        direccionParaJugador1 = player.position - transform.position;
+        direccionParaJugador2 = player2.position - transform.position;
+        if (radioApuntar >= direccionParaJugador1.magnitude)
         {
-            transform.right = -direccion;
+            transform.right = direccionParaJugador1;
         }
-        if(radioApuntar >= direccion2.magnitude)
+        if(radioApuntar >= direccionParaJugador2.magnitude)
         {
-            transform.right = -direccion2;
+            transform.right = direccionParaJugador2;
         }
 
     }
+
     void Dispararbala()
     {
         GameObject newbala = Instantiate(prefabBall, posicionBala.position, transform.rotation);
         Rigidbody2D rbbala = newbala.GetComponent<Rigidbody2D>();
-        rbbala.AddForce(direccion.normalized * poderbala, ForceMode2D.Impulse);
+        //rbbala.AddForce(direccion.normalized * poderbala, ForceMode2D.Impulse);
     }
     private void OnDrawGizmos()
 

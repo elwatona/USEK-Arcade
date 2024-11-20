@@ -5,53 +5,53 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    public float spd2, power2;
-    public float lifePlater2, currentLifePlayer2;
+    public float velocidadJugador2, poderSaltoJugador2;
+    public float maximaVidaJugador2, vidaRestanteJugador2;
     float x, y;
-    public Transform player2, spawn;
+    public Transform player2, posicionBala;
     public GameObject escudo;
-    GroundChecker gc;
-    Rigidbody2D rb2;
-    Vector2 dEscudo;
+    GroundChecker groundchecker;
+    Rigidbody2D rigidbody2;
+    Vector2 direccionEscudo; 
     bool isFlipped2;
     // Start is called before the first frame update
     void Start()
     {
-        rb2 = GetComponent<Rigidbody2D>();
-        gc = GetComponentInChildren<GroundChecker>();
-        currentLifePlayer2 = lifePlater2;
+        rigidbody2 = GetComponent<Rigidbody2D>();
+        groundchecker = GetComponentInChildren<GroundChecker>();
+        vidaRestanteJugador2 = maximaVidaJugador2;
     }
-    public void Move2(Vector2 input)
+    public void Movimiento_Jugador2(Vector2 input)
     {
         x = input.x;
         if(x != 0)
         {
-            MoveT2();
+            Mover_Jugador2_A();
         }
-        Flip2(input);
+        Flip_Jugador2_Cambio_De_Direccion(input);
     }
-    public void JumpInput2(bool jumpBotton)
+    public void Boton_Para_Saltar_Jugador2(bool jumpBotton)
     {
-        if(jumpBotton == true && gc.estaTocando)            
+        if(jumpBotton == true && groundchecker.estaTocando)            
         {
-            Jump2();
+            Fuerza_Salto_Jugador2();
         }
     }
-    void MoveT2()
+    void Mover_Jugador2_A()
     {
         Vector3 direccion2 = new Vector2(x, 0);
-        player2.position += direccion2 * spd2 * Time.deltaTime;
+        player2.position += direccion2 * velocidadJugador2 * Time.deltaTime;
     }
     public void Escudo(bool value)
     {
         //Debug.Log(value);
         escudo.SetActive(value);
     }
-    void Jump2()
+    void Fuerza_Salto_Jugador2()
     {
-        rb2.AddForce(Vector2.up * power2, ForceMode2D.Impulse);
+        rigidbody2.AddForce(Vector2.up * poderSaltoJugador2, ForceMode2D.Impulse);
     }
-    void Flip2(Vector2 direccion2)
+    void Flip_Jugador2_Cambio_De_Direccion(Vector2 direccion2)
     {
         switch (direccion2)
         {
@@ -83,8 +83,8 @@ public class Player2 : MonoBehaviour
     }
     public void TakeDamagePlayer2(float damagePlayer2)
     {
-        currentLifePlayer2 -= damagePlayer2;
-        if(currentLifePlayer2 <= 0)
+        vidaRestanteJugador2 -= damagePlayer2;
+        if(vidaRestanteJugador2 <= 0)
         {
             gameObject.SetActive(false);
             GameSceneManager.GameOver();

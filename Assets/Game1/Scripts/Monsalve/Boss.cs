@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public float lifeBoss,currentLifeBoss;
-    public bool bossPhase = true;
-    public GameObject bossPhase1,bossPhase2;
+    public float vidaJefe,vidaRestanteJefe;
+    public bool fasesDelJefe = true;
+    public GameObject primeraFase,segundaFase;
     // Start is called before the first frame update
     void Start()
     {
-        currentLifeBoss = lifeBoss;
+        vidaRestanteJefe = vidaJefe;
     }
 
     // Update is called once per frame
@@ -20,16 +20,16 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamge(float damage)
     {
-        currentLifeBoss -= damage;
-        if(currentLifeBoss <= 50 && bossPhase == true)
+        vidaRestanteJefe -= damage;
+        if(vidaRestanteJefe <= 50 && fasesDelJefe == true)
         {
-            bossPhase1.SetActive(false);
-            bossPhase2.SetActive(true);
-            bossPhase = false;
+            primeraFase.SetActive(false);
+            segundaFase.SetActive(true);
+            fasesDelJefe = false;
         }
-        else if(currentLifeBoss <= 0)
+        else if(vidaRestanteJefe <= 0)
         {
-            bossPhase2.SetActive(false);
+            segundaFase.SetActive(false);
             GameSceneManager.NextLevel();
         }
 

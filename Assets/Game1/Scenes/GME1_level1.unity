@@ -3331,9 +3331,11 @@ MonoBehaviour:
   radioApuntar: 6
   radioDisparo: 6
   player: {fileID: 1065488655}
+  player2: {fileID: 0}
   posicionBala: {fileID: 267047427}
   prefabBall: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
   poderbala: 7
+  maxCount: 0
   contador: 0
 --- !u!114 &802010101
 MonoBehaviour:
@@ -3983,7 +3985,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 2
   power: 5
-  poderBala: 0
   lifePlayer: 0
   currenLifePlayer: 0
   player: {fileID: 1065488655}

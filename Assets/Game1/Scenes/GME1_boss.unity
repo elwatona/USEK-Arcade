@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 11868843}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd2: 2
   power2: 5
-  lifePlater2: 10
+  maxLifePlater2: 0
   currentLifePlayer2: 0
   player2: {fileID: 11868847}
   spawn: {fileID: 0}
@@ -618,6 +618,7 @@ MonoBehaviour:
   posicionBala: {fileID: 1149025941}
   prefabBall: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
   poderbala: 7
+  maxCount: 180
   contador: 0
 --- !u!114 &190133698
 MonoBehaviour:
@@ -2518,6 +2519,7 @@ MonoBehaviour:
   posicionBala: {fileID: 671105581}
   prefabBall: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
   poderbala: 7
+  maxCount: 180
   contador: 0
 --- !u!1 &974528975
 GameObject:
@@ -3633,9 +3635,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580788472102705336, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_AssetsPPU
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023686280829614731, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5023686280829614731, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
       propertyPath: orthographic size
       value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023686280829614731, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6543708492215816660, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
       propertyPath: m_Name
@@ -3672,6 +3686,18 @@ PrefabInstance:
     - target: {fileID: 6983347532280642251, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 136.1829
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983347532280642251, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983347532280642251, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983347532280642251, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6983347532280642251, guid: 98d77ab7d17d6b34cadc96a3156355b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3741,7 +3767,7 @@ GameObject:
   - component: {fileID: 1783704874}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3759,8 +3785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spd: 2
-  power: 5
-  lifePlayer: 5
+  power: 3
+  maxLifePlayer: 0
   currenLifePlayer: 0
   player: {fileID: 1783704878}
   spawn: {fileID: 1108937348}
