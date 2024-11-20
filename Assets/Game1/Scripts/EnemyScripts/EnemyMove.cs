@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public Transform positionA, positionB, tPlayer;
+    public Transform posicionA, posicionB, ObjetivoDeSeguimiento;
     public float speed = 10;
-    Transform enemyTransformPosition;
+    Transform enemy;
     public Vector2 direction;
 
     public float radio;
@@ -18,13 +18,13 @@ public class EnemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyTransformPosition = transform;
+        enemy = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (radio >= (tPlayer.position - enemyTransformPosition.position).magnitude)
+        if (radio >= (ObjetivoDeSeguimiento.position - enemy.position).magnitude)
         {
             isEnemyInZone = true;
         }
@@ -34,23 +34,23 @@ public class EnemyMove : MonoBehaviour
         }
         if (isEnemyInZone)
         {
-            direction = tPlayer.position - enemyTransformPosition.position;
+            direction = ObjetivoDeSeguimiento.position - enemy.position;
 
         }
         else if (isRight)
         {
-            direction = positionB.position - enemyTransformPosition.position;
+            direction = posicionB.position - enemy.position;
         }
         else
         {
-            direction = positionA.position - enemyTransformPosition.position;
+            direction = posicionA.position - enemy.position;
         }
         if (direction.magnitude <= radio)
         {
             isRight = !isRight;
         }
 
-        enemyTransformPosition.position += (Vector3)(direction.normalized * speed * Time.deltaTime);
+        enemy.position += (Vector3)(direction.normalized * speed * Time.deltaTime);
 
     }
 

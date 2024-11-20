@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float spd,power;
-    public float maxLifePlayer, currenLifePlayer;
+    public float velocidad,poderSalto;
+    public float maximaVidaJugador1, vidaRestanteJugador1;
     float x, y;
 
-    public Transform player,spawn;
+    public Transform player,posicionBala;
     public GameObject bala;
-    GroundChecker gc;
-    Rigidbody2D rb;
+    GroundChecker groundchecker;
+    Rigidbody2D rigidbody;
 
     Vector2 dBala;
     bool isFlipped;
@@ -19,46 +19,46 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        gc = GetComponentInChildren<GroundChecker>();
-        currenLifePlayer = maxLifePlayer;
+        rigidbody = GetComponent<Rigidbody2D>();
+        groundchecker = GetComponentInChildren<GroundChecker>();
+        vidaRestanteJugador1 = maximaVidaJugador1;
     }
 
-    public void Move(Vector2 input)
+    public void Movimiento_Jugador1(Vector2 input)
     {
         x = input.x;
         if (x != 0)
         {
-            MoveTarget();
+            Mover_Jugador1_A();
         }
-        Flip(input);
+        Flip_Cambio_De_Direccion_Jugador1(input);
     }
-    public void JumpInput(bool jumpButton)
+    public void Boton_Salto_Jugador1(bool jumpButton)
     {
-        if (jumpButton == true && gc.estaTocando)
+        if (jumpButton == true && groundchecker.estaTocando)
         {
-            Jump();
+            Salto_Jugador1();
         }
     }
 
-    void MoveTarget()
+    void Mover_Jugador1_A()
     {
         Vector3 direccion = new Vector2(x, 0);
-        player.position += direccion * spd * Time.deltaTime;
+        player.position += direccion * velocidad * Time.deltaTime;
         
     }
     public void Disparar(bool input)
     {
         if (!input) return; //En caso que no se presione la tecla, hara return.
-        GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
+        GameObject newBala = Instantiate(bala, posicionBala.position, transform.rotation);
         Destroy(newBala,1f);
     }
 
-    void Jump()
+    void Salto_Jugador1()
     {
-        rb.AddForce(Vector2.up * power, ForceMode2D.Impulse);  
+        rigidbody.AddForce(Vector2.up * poderSalto, ForceMode2D.Impulse);  
     }
-    void Flip(Vector2 direccion)
+    void Flip_Cambio_De_Direccion_Jugador1(Vector2 direccion)
     {
         switch (direccion)
         {
@@ -90,8 +90,8 @@ public class Player : MonoBehaviour
     }
     public void TakeDamagePlayer(float damagePlayer)
     {
-        currenLifePlayer -= damagePlayer;
-        if(currenLifePlayer <= 0)
+        vidaRestanteJugador1 -= damagePlayer;
+        if(vidaRestanteJugador1 <= 0)
         {
             gameObject.SetActive(false);
             GameSceneManager.GameOver();

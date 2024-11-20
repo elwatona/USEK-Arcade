@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Proyectil : MonoBehaviour
 {
-    public float damage;
+    public float daño;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Boss") == true)
         {
             Boss boss = collision.GetComponent<Boss>();
-            boss.TakeDamge(damage);
+            boss.TakeDamge(daño);
         }
     }
 }

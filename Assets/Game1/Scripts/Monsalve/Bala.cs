@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public Player pj;
-    public Player2 pj2;
+    public Player jugador1;
+    public Player2 jugador2;
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _poderBala;
     private void Awake()
@@ -20,13 +20,13 @@ public class Bala : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.gameObject.TryGetComponent<Player>(out pj))
+            if (collision.gameObject.TryGetComponent<Player>(out jugador1))
             {
-                pj.TakeDamagePlayer(2);
+                jugador1.TakeDamagePlayer(2);
             }
-            else if (collision.gameObject.TryGetComponent<Player2>(out pj2))
+            else if (collision.gameObject.TryGetComponent<Player2>(out jugador2))
             {
-                pj2.TakeDamagePlayer2(2);
+                jugador2.TakeDamagePlayer2(2);
             }
         }
         Destroy(gameObject);
