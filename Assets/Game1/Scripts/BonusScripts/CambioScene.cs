@@ -23,7 +23,7 @@ public class CambioScene : MonoBehaviour
     }
     public void ChangeLevel2()
     {
-        SceneManager.LoadScene("GME1_Level2");
+        SceneManager.LoadScene("GME1_boss");
         
     }
 }
