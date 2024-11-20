@@ -6,12 +6,12 @@ public class EnemyApuntar : MonoBehaviour
 {
     public float radioApuntar = 5f;
     public float radioDisparo = 2f;
-    public Transform player;
+    public Transform player,player2;
     public Transform posicionBala;
     public GameObject prefabBall;
     public float poderbala = 7f;
     public int contador;
-    Vector2 direccion;
+    Vector2 direccion,direccion2;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class EnemyApuntar : MonoBehaviour
         if (radioDisparo >= direccion.magnitude)
         {
             contador++;
-            if (contador >= 120)
+            if (contador >= 180)
             {
                 Dispararbala();
                 contador = 0;
@@ -37,9 +37,14 @@ public class EnemyApuntar : MonoBehaviour
     void ApuntarEnemy()
     {
         direccion = player.position - transform.position;
+        direccion2 = player2.position - transform.position;
         if (radioApuntar >= direccion.magnitude)
         {
-            transform.up = -direccion;
+            transform.right = -direccion;
+        }
+        if(radioApuntar >= direccion2.magnitude)
+        {
+            transform.right = -direccion2;
         }
 
     }

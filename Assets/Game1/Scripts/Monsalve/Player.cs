@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float spd,power,poderBala;
+    public float spd,power;
     public float lifePlayer, currenLifePlayer;
     float x, y;
 
@@ -51,8 +51,6 @@ public class Player : MonoBehaviour
     {
         if (!input) return; //En caso que no se presione la tecla, hara return.
         GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
-        Rigidbody2D rbBala = newBala.GetComponent<Rigidbody2D>();
-        rbBala.AddForce(dBala.normalized * poderBala, ForceMode2D.Impulse);
         Destroy(newBala,1f);
     }
 
