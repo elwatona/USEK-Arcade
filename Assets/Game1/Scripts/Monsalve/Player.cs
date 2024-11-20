@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         GameObject newBala = Instantiate(bala, spawn.position, transform.rotation);
         Rigidbody2D rbBala = newBala.GetComponent<Rigidbody2D>();
         rbBala.AddForce(dBala.normalized * poderBala, ForceMode2D.Impulse);
+        Destroy(newBala,1f);
     }
 
     void Jump()
