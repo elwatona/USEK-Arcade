@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Bonus : MonoBehaviour
+public class Player2B : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float spd;
@@ -15,9 +15,9 @@ public class Player2Bonus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnJoystickP1();
+        OnJoystickP2();
     }
-    void OnJoystickP1()
+    public void OnJoystickP2()
     {
         float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
         float movimientoVertical = Input.GetAxisRaw("Vertical");

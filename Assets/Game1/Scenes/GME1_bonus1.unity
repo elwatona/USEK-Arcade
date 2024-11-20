@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 115762695}
   - component: {fileID: 115762694}
   m_Layer: 0
-  m_Name: Trigger2
+  m_Name: TriggerP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 149989761}
   - component: {fileID: 149989760}
   m_Layer: 0
-  m_Name: Instanciar
+  m_Name: BotonInstanciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 228415365}
   - component: {fileID: 228415364}
   m_Layer: 5
-  m_Name: S1
+  m_Name: Score1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -431, y: 449}
+  m_AnchoredPosition: {x: -431, y: 451}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &247796683
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -86.51776, y: 0, z: -81.964355, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -609,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038146973, y: 60.353535}
-  m_SizeDelta: {x: 616.6541, y: 201.5468}
+  m_AnchoredPosition: {x: 40, y: 48.969624}
+  m_SizeDelta: {x: 826.118, y: 224.3147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &346115602
 GameObject:
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 1433776518}
   - component: {fileID: 1433776520}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: TriggerP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1962,9 +1962,37 @@ PrefabInstance:
       value: Input Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1040767119}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1956135984}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_useFullKinematicContacts
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Rigidbody2D, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player2Bonus, Game1
+      objectReference: {fileID: 0}
     - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2138,8 +2166,10 @@ MonoBehaviour:
   scoreP1: {fileID: 228415364}
   scoreP2: {fileID: 2144486698}
   timer: 0
-  _timeLimit: 30
+  _timeLimit: 10
   time: 0
+  triggerScript: {fileID: 1433776518}
+  triggerP2: {fileID: 115762695}
 --- !u!1 &1625684070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2554,62 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1956135984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4855571504123516391, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
+  m_PrefabInstance: {fileID: 8858518575529467975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956135979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891b3ff669fb62044ae01662bea68263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1956135987
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956135979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2144486697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,7 +2622,7 @@ GameObject:
   - component: {fileID: 2144486699}
   - component: {fileID: 2144486698}
   m_Layer: 5
-  m_Name: S2
+  m_Name: Score2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2655,7 +2741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 742, y: 449}
+  m_AnchoredPosition: {x: 742, y: 451}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &6731869791439376708
@@ -2776,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855571504123516391, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
       propertyPath: m_Name
@@ -2789,6 +2875,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1956135983}
+    - targetCorrespondingSourceObject: {fileID: 6175511756829114444, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956135987}
   m_SourcePrefab: {fileID: 100100000, guid: 64bafef04e5f9ef40aac61e6690635d2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

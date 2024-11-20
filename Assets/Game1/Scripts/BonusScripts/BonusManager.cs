@@ -14,14 +14,14 @@ public class BonusManager : MonoBehaviour
     public float time;
     private bool isTimerOn = true;
     private int puntaje1, puntaje2;
-    private TriggerScript triggerScript;
-    private TriggerP2 triggerP2;
+    public TriggerScript triggerScript;
+    public TriggerP2 triggerP2;
     // Start is called before the first frame update
     void Start()
     {
         isTimerOn = true;
-        triggerScript = GetComponent<TriggerScript>();
-        triggerP2 = GetComponent<TriggerP2>();
+       // triggerScript = GetComponent<TriggerScript>();
+       // triggerP2 = GetComponent<TriggerP2>();
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class BonusManager : MonoBehaviour
             isTimerOn = false;
             timer = 0;
            
-            end.text = "BONUS COMPLETE   PLAYER 1: " + triggerScript.scoreText.ToString() + "PLAYER 2: " + triggerP2.scoreText2.ToString(); //Not Set to an instance of an object. Que hacer?
+            end.text = "BONUS COMPLETE   PLAYER 1:  " + triggerScript.scoreText.text + " PLAYER 2:   " + triggerP2.scoreText2.text; //Not Set to an instance of an object. Que hacer?
 
             
             
@@ -57,7 +57,7 @@ public class BonusManager : MonoBehaviour
         textTime.text = "Timer: " + timer;
     }
    
-    void MostrarPuntaje()
+    void MostrarPuntajeCanvas()
     {
         //El TextMeshPro debe mostrar el puntaje tanto del player 1 como del player 2;
         scoreTextPlayer1.text = "Player 1:" + scoreP1;
