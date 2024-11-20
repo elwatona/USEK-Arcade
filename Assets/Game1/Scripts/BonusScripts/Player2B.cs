@@ -11,16 +11,8 @@ public class Player2B : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnJoystickP2(Vector2 direccion)
     {
-        OnJoystickP2();
-    }
-    public void OnJoystickP2()
-    {
-        float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
-        float movimientoVertical = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(movimientoHorizontal * 0f, movimientoVertical * spd);
+        rb.velocity = new Vector2(direccion.x * 0f, direccion.y * spd);
     }
 }

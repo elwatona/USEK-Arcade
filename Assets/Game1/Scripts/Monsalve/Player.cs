@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Transform player,posicionBala;
     public GameObject bala;
     GroundChecker groundchecker;
-    Rigidbody2D rigidbody;
+    Rigidbody2D m_rigidbody;
 
     Vector2 dBala;
     bool isFlipped;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        m_rigidbody = GetComponent<Rigidbody2D>();
         groundchecker = GetComponentInChildren<GroundChecker>();
         vidaRestanteJugador1 = maximaVidaJugador1;
     }
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     void Salto_Jugador1()
     {
-        rigidbody.AddForce(Vector2.up * poderSalto, ForceMode2D.Impulse);  
+        m_rigidbody.AddForce(Vector2.up * poderSalto, ForceMode2D.Impulse);  
     }
     void Flip_Cambio_De_Direccion_Jugador1(Vector2 direccion)
     {

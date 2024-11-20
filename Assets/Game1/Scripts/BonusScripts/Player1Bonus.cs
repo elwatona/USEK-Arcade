@@ -11,18 +11,8 @@ public class Player1Bonus : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnJoystickP2(Vector2 direccion)
     {
-        OnJoystickP2();
-    }
-    void OnJoystickP2()
-    {
-        //Hacer que los jugadores puedan mover la palanca de manera Horizontal o vertical
-        float movimientoHorizontal = Input.GetAxisRaw("P1_Horizontal");
-        float movimientoVertical = Input.GetAxisRaw("P1_Vertical");
-        rb.velocity = new Vector2(movimientoHorizontal * spd, movimientoVertical * 0f);
-     
+        rb.velocity = new Vector2(direccion.x * spd, direccion.y * 0f);
     }
 }
