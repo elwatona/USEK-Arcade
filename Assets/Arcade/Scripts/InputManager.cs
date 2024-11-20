@@ -8,7 +8,15 @@ public class InputManager : MonoBehaviour
     [Serializable]
     private class Player
     {
-        [SerializeField] private UnityEvent<bool>[] _buttonEvents;
+        [Serializable]
+        private struct ButtonEvent
+        {
+            [SerializeField] private bool _continuousCallback;
+            [SerializeField] private UnityEvent<bool> _event;
+            public bool ContinuousCallback => _continuousCallback;
+            public UnityEvent<bool> Event => _event;
+        }
+        [SerializeField] private ButtonEvent[] _buttonEvents;
         [SerializeField] private UnityEvent<Vector2> _joystickEvent;
         private string _playerPrefix;
         private Vector2 _joystick => new Vector2(Input.GetAxis(_playerPrefix + "Horizontal"), Input.GetAxis(_playerPrefix + "Vertical"));
@@ -18,25 +26,30 @@ public class InputManager : MonoBehaviour
             _playerPrefix = value;
         }
 
-        private bool GetButton(int index)
+        private bool GetButton(int index, bool continuous)
         {
+            string action = _playerPrefix;
             switch (index)
             {
                 case 0:
-                    return Input.GetButton(_playerPrefix + "Fire1");
+                    action += "Fire1";
+                    break;
                 case 1:
-                    return Input.GetButton(_playerPrefix + "Fire2");
+                    action += "Fire2";
+                    break;
                 default:
                     Debug.LogAssertion("El input ingresado no está registrado.");
                     return false;
             }
+            return continuous ? Input.GetButton(action) : Input.GetButtonDown(action);
         }
 
         public void CheckButtons()
         {
             for (int i = 0; i < _buttonEvents.Length; i++)
             {
-                _buttonEvents[i]?.Invoke(GetButton(i));
+                ButtonEvent buttonEvent = _buttonEvents[i];
+                buttonEvent.Event?.Invoke(GetButton(i, buttonEvent.ContinuousCallback));
             }
         }
 
