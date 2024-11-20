@@ -48,7 +48,8 @@ public class BonusManager : MonoBehaviour
             isTimerOn = false;
             timer = 0;
            
-            end.text = "BONUS COMPLETE   PLAYER 1: " + scoreP1 + "PLAYER 2: " + scoreP2;
+            end.text = "BONUS COMPLETE   PLAYER 1: " + triggerScript.scoreText.ToString() + "PLAYER 2: " + triggerP2.scoreText2.ToString(); //Not Set to an instance of an object. Que hacer?
+
             
             
 
