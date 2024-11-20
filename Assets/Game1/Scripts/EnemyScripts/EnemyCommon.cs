@@ -12,98 +12,117 @@ public class EnemyCommon : MonoBehaviour
     public bool isAttacking;
     public GameObject target;
 
-    //public float visionRange;
-    //public float attackRange;
-    //public GameObject range;
-    //public GameObject hit;
+    public float visionRange;
+    public float attackRange;
+    public GameObject range;
+    public GameObject hit;
     void Start()
     {
-        target = GameObject.Find("player");
+        target = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
         Comportamientos();
+        FinalAni();
+        ColliderWeaponTrue();
+        ColliderWeaponFalse();
     }
     public void Comportamientos()
     {
-        cronometro += 1 * Time.deltaTime;
-        if (cronometro >= 4)
-        {
-            rutina = Random.Range(0, 2);
-            cronometro = 0;
-        }
-
-        switch (rutina)
-        {
-            case 0:
-                dir = Random.Range(0, 2);
-                rutina++;
-                break;
-            case 1:
-                switch (dir)
-                {
-                    case 0:
-                        transform.rotation = Quaternion.Euler(0, 0, 0);
-                        transform.Translate(Vector3.left * walkSpeed * Time.deltaTime);
-                        break;
-                }
-                break;
-        }
-        //if(Mathf.Abs(transform.position.x - target.transform.position.x) > visionRange && !isAttacking)
+        //cronometro += 1 * Time.deltaTime;
+        //if (cronometro >= 4)
         //{
-        //    cronometro += 1 * Time.deltaTime;
-        //    if (cronometro >= 4)
-        //    {
-        //        rutina = Random.Range(0, 2);
-        //        cronometro = 0;
-        //    }
-
-        //    switch (rutina)
-        //    {
-        //        case 0:
-        //            dir = Random.Range(0, 2);
-        //            rutina++;
-        //            break;
-        //        case 1:
-        //            switch (dir)
-        //            {
-        //                case 0:
-        //                    transform.rotation = Quaternion.Euler(0, 0, 0);
-        //                    transform.Translate(Vector3.left * walkSpeed * Time.deltaTime);
-        //                    break;
-        //            }
-        //            break;
-        //    }
+        //    rutina = Random.Range(0, 2);
+        //    cronometro = 0;
         //}
-        //else
+
+        //switch (rutina)
         //{
-        //    if(Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange && !isAttacking)
-        //    {
-        //        if(transform.position.x < target.transform.position.x)
+        //    case 0:
+        //        dir = Random.Range(0, 2);
+        //        rutina++;
+        //        break;
+        //    case 1:
+        //        switch (dir)
         //        {
-        //            transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
-        //            transform.rotation = Quaternion.Euler(0, 0, 0);
-        //        }
-        //        else
-        //        {
-        //            transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
-        //            transform.rotation = Quaternion.Euler(0, 180, 0);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if(!isAttacking)
-        //        {
-        //            if(transform.position.x < target.transform.position.x)
-        //            {
+        //            case 0:
         //                transform.rotation = Quaternion.Euler(0, 0, 0);
-        //            }
-        //            else
-        //            {
-        //                transform.rotation = Quaternion.Euler(0, 180, 0);
-        //            }
+        //                transform.Translate(Vector3.left * walkSpeed * Time.deltaTime);
+        //                break;
         //        }
-        //    }
+        //        break;
         //}
+
+        if (Mathf.Abs(transform.position.x - target.transform.position.x) > visionRange && !isAttacking)
+        {
+            cronometro += 1 * Time.deltaTime;
+            if (cronometro >= 4)
+            {
+                rutina = Random.Range(0, 2);
+                cronometro = 0;
+            }
+
+            switch (rutina)
+            {
+                case 0:
+                    dir = Random.Range(0, 2);
+                    rutina++;
+                    break;
+                case 1:
+                    switch (dir)
+                    {
+                        case 0:
+                            transform.rotation = Quaternion.Euler(0, 0, 0);
+                            transform.Translate(Time.deltaTime * walkSpeed * Vector3.left);
+                            break;
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            if (Mathf.Abs(transform.position.x - target.transform.position.x) > attackRange && !isAttacking)
+            {
+                if (transform.position.x < target.transform.position.x)
+                {
+                    transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    transform.Translate(Vector3.left * runSpeed * Time.deltaTime);
+                    //transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+            }
+            else
+            {
+                if (!isAttacking)
+                {
+                    if (transform.position.x < target.transform.position.x)
+                    {
+                        transform.rotation = Quaternion.Euler(0, 0, 0);
+                    }
+                    else
+                    {
+                        //transform.rotation = Quaternion.Euler(0, 180, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    public void FinalAni()
+    {
+        isAttacking = false;
+        range.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void ColliderWeaponTrue()
+    {
+        hit.GetComponent<BoxCollider2D>().enabled = true;
+    }
+    public void ColliderWeaponFalse()
+    {
+        hit.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
