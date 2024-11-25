@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public Transform posicionA, posicionB, ObjetivoDeSeguimiento;
+    public Transform posicionA, posicionB, ObjetivoDeSeguimiento1, ObjetivoDeSeguimiento2;
     public float speed = 10;
     Transform enemy;
     public Vector2 direction;
@@ -14,17 +14,14 @@ public class EnemyMove : MonoBehaviour
 
     public bool isEnemyInZone = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         enemy = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (radio >= (ObjetivoDeSeguimiento.position - enemy.position).magnitude)
+        if (radio >= (ObjetivoDeSeguimiento1.position - enemy.position).magnitude)
         {
             isEnemyInZone = true;
         }
@@ -34,7 +31,33 @@ public class EnemyMove : MonoBehaviour
         }
         if (isEnemyInZone)
         {
-            direction = ObjetivoDeSeguimiento.position - enemy.position;
+            direction = ObjetivoDeSeguimiento1.position - enemy.position;
+
+        }
+        else if (isRight)
+        {
+            direction = posicionB.position - enemy.position;
+        }
+        else
+        {
+            direction = posicionA.position - enemy.position;
+        }
+        if (direction.magnitude <= radio)
+        {
+            isRight = !isRight;
+        }
+
+        if (radio >= (ObjetivoDeSeguimiento2.position - enemy.position).magnitude)
+        {
+            isEnemyInZone = true;
+        }
+        else
+        {
+            isEnemyInZone = false;
+        }
+        if (isEnemyInZone)
+        {
+            direction = ObjetivoDeSeguimiento2.position - enemy.position;
 
         }
         else if (isRight)
