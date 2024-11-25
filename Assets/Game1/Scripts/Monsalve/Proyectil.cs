@@ -10,7 +10,7 @@ public class Proyectil : MonoBehaviour
         if (collision.CompareTag("Boss") == true)
         {
             Boss boss = collision.GetComponent<Boss>();
-            boss.TakeDamge(daño);
+            boss.TakeDamage(daño);
         }
     }
 }
