@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, IDamageable
 {
     public float vidaJefe,vidaRestanteJefe;
     public bool fasesDelJefe = true;
@@ -18,7 +18,7 @@ public class Boss : MonoBehaviour
     {
         
     }
-    public void TakeDamge(float damage)
+    public void TakeDamage(float damage)
     {
         vidaRestanteJefe -= damage;
         if(vidaRestanteJefe <= 50 && fasesDelJefe == true)
@@ -34,13 +34,4 @@ public class Boss : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Bullet"))
-        {
-            TakeDamge(10);
-        }
-    }
-
-
 }
