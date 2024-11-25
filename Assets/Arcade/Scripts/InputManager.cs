@@ -55,8 +55,7 @@ public class InputManager : MonoBehaviour
 
         public void CheckJoystick()
         {
-            if (_joystick != Vector2.zero)
-                _joystickEvent?.Invoke(_joystick);
+            _joystickEvent?.Invoke(_joystick);
         }
     }
     [SerializeField] private bool _canDebug;

@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220cf64f11b45d04fa4f5e9cefebcb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd2: 2
-  power2: 5
-  maxLifePlater2: 0
-  currentLifePlayer2: 0
+  velocidadJugador2: 5
+  poderSaltoJugador2: 3
+  maximaVidaJugador2: 100
+  vidaRestanteJugador2: 0
   player2: {fileID: 11868847}
-  spawn: {fileID: 0}
+  posicionBala: {fileID: 1137000621}
   escudo: {fileID: 1137000620}
 --- !u!61 &11868844
 BoxCollider2D:
@@ -567,11 +567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c249c2c974951a4da106ea3a345269a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBoss: 100
-  currentLifeBoss: 0
-  bossPhase: 1
-  bossPhase1: {fileID: 190133691}
-  bossPhase2: {fileID: 755279660}
+  vidaJefe: 52
+  vidaRestanteJefe: 0
+  fasesDelJefe: 1
+  primeraFase: {fileID: 190133691}
+  segundaFase: {fileID: 755279660}
 --- !u!50 &190133696
 Rigidbody2D:
   serializedVersion: 4
@@ -618,7 +618,7 @@ MonoBehaviour:
   posicionBala: {fileID: 1149025941}
   prefabBall: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
   poderbala: 7
-  maxCount: 180
+  maximoContador: 0
   contador: 0
 --- !u!114 &190133698
 MonoBehaviour:
@@ -632,9 +632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5fdac1c34c55d4db9bdfe2b542c59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionA: {fileID: 2053090822}
-  positionB: {fileID: 684919767}
-  tPlayer: {fileID: 447069176}
+  posicionA: {fileID: 2053090822}
+  posicionB: {fileID: 684919767}
+  ObjetivoDeSeguimiento: {fileID: 447069176}
   speed: 3
   direction: {x: 0, y: 0}
   radio: 1
@@ -653,6 +653,10 @@ PrefabInstance:
       value: Input Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._continuousCallback
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1783704874}
@@ -662,11 +666,27 @@ PrefabInstance:
       objectReference: {fileID: 11868843}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move
+      value: Movimiento_Jugador1
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move2
+      value: Movimiento_Jugador2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -709,6 +729,54 @@ PrefabInstance:
       value: Escudo
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1783704874}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1783704874}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11868843}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11868843}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Disparar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Boton_Salto_Jugador1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Escudo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Boton_Para_Saltar_Jugador2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Player, Game1
       objectReference: {fileID: 0}
@@ -723,6 +791,38 @@ PrefabInstance:
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Player2, Game1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Game1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Game1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player2, Game1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player2, Game1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._buttonEvents.Array.data[1]._event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2475,11 +2575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c249c2c974951a4da106ea3a345269a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBoss: 50
-  currentLifeBoss: 0
-  bossPhase: 1
-  bossPhase1: {fileID: 190133691}
-  bossPhase2: {fileID: 755279660}
+  vidaJefe: 50
+  vidaRestanteJefe: 0
+  fasesDelJefe: 1
+  primeraFase: {fileID: 190133691}
+  segundaFase: {fileID: 755279660}
 --- !u!114 &755279666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,9 +2592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5fdac1c34c55d4db9bdfe2b542c59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionA: {fileID: 522088898}
-  positionB: {fileID: 452533917}
-  tPlayer: {fileID: 447069176}
+  posicionA: {fileID: 522088898}
+  posicionB: {fileID: 452533917}
+  ObjetivoDeSeguimiento: {fileID: 447069176}
   speed: 3
   direction: {x: 0, y: 0}
   radio: 0.28
@@ -2519,7 +2619,7 @@ MonoBehaviour:
   posicionBala: {fileID: 671105581}
   prefabBall: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
   poderbala: 7
-  maxCount: 180
+  maximoContador: 0
   contador: 0
 --- !u!1 &974528975
 GameObject:
@@ -3784,12 +3884,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2659045a1aa284294202f83809d3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 2
-  power: 3
-  maxLifePlayer: 0
-  currenLifePlayer: 0
+  velocidad: 5
+  poderSalto: 3
+  maximaVidaJugador1: 100
+  vidaRestanteJugador1: 0
   player: {fileID: 1783704878}
-  spawn: {fileID: 1108937348}
+  posicionBala: {fileID: 1108937348}
   bala: {fileID: 8214025235592779883, guid: 530f0bf064e7bf84da2ba9aee580a4fa, type: 3}
 --- !u!61 &1783704875
 BoxCollider2D:
@@ -3924,7 +4024,7 @@ Transform:
   m_GameObject: {fileID: 1783704873}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 419.42, y: 232.5, z: 0}
+  m_LocalPosition: {x: 420.08, y: 232.5, z: 0}
   m_LocalScale: {x: 0.58456, y: 0.58456, z: 0.58456}
   m_ConstrainProportionsScale: 0
   m_Children:
