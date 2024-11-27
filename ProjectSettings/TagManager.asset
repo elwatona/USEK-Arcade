@@ -43,12 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
-    uniqueID: 4154951085
-    locked: 0
   - name: Muebles
     uniqueID: 1945885151
     locked: 0
   - name: piso
     uniqueID: 4280080665
+    locked: 0
+  - name: Player
+    uniqueID: 740892599
+    locked: 0
+  - name: BossPhase1
+    uniqueID: 2612500867
     locked: 0
