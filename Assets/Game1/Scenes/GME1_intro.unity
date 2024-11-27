@@ -254,7 +254,7 @@ MonoBehaviour:
   _fullText: "asdsdsdsdsdsdsd sd sds dsd sd s.> dsds dsdsdsjhdjshd jahfkjsdf khnsdlvhj
     wlijcnalkj alkjsdhn akljsd klajhfljs dialjd asjdj.> skjd ajd a\xF1odsj al\xF1ksdjk
     ajlksdj aslkjd alkdnalkclakjsca scanljc nakjckaca"
-  _lineSeparator: 
+  _lineSeparator: '>'
 --- !u!1 &1067948481
 GameObject:
   m_ObjectHideFlags: 0
