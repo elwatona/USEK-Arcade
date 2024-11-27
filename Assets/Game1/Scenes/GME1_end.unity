@@ -250,9 +250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMesh: {fileID: 1067948482}
   _textDelay: 0.05
-  _textFile: {fileID: 4900000, guid: 8201d676f161a19468da0f8a2dfd7e62, type: 3}
+  _textFile: {fileID: 4900000, guid: 3f8a40ddc2df2f04d85d1551cc749bd2, type: 3}
   _fullText: 
-  _lineSeparator: 
+  _lineSeparator: '>'
 --- !u!1 &1067948481
 GameObject:
   m_ObjectHideFlags: 0

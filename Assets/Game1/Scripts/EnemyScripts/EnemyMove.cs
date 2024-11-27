@@ -21,6 +21,7 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
+
         if (radio >= (ObjetivoDeSeguimiento1.position - enemy.position).magnitude)
         {
             isEnemyInZone = true;
@@ -29,6 +30,7 @@ public class EnemyMove : MonoBehaviour
         {
             isEnemyInZone = false;
         }
+
         if (isEnemyInZone)
         {
             direction = ObjetivoDeSeguimiento1.position - enemy.position;
@@ -42,6 +44,7 @@ public class EnemyMove : MonoBehaviour
         {
             direction = posicionA.position - enemy.position;
         }
+
         if (direction.magnitude <= radio)
         {
             isRight = !isRight;
@@ -55,6 +58,7 @@ public class EnemyMove : MonoBehaviour
         {
             isEnemyInZone = false;
         }
+
         if (isEnemyInZone)
         {
             direction = ObjetivoDeSeguimiento2.position - enemy.position;
@@ -68,11 +72,13 @@ public class EnemyMove : MonoBehaviour
         {
             direction = posicionA.position - enemy.position;
         }
+
         if (direction.magnitude <= radio)
         {
             isRight = !isRight;
         }
 
+        Debug.Log(direction);
         enemy.position += (Vector3)(direction.normalized * speed * Time.deltaTime);
 
     }
