@@ -251,9 +251,7 @@ MonoBehaviour:
   _textMesh: {fileID: 1067948482}
   _textDelay: 0.05
   _textFile: {fileID: 4900000, guid: 8201d676f161a19468da0f8a2dfd7e62, type: 3}
-  _fullText: "asdsdsdsdsdsdsd sd sds dsd sd s.> dsds dsdsdsjhdjshd jahfkjsdf khnsdlvhj
-    wlijcnalkj alkjsdhn akljsd klajhfljs dialjd asjdj.> skjd ajd a\xF1odsj al\xF1ksdjk
-    ajlksdj aslkjd alkdnalkclakjsca scanljc nakjckaca"
+  _fullText: 
   _lineSeparator: 
 --- !u!1 &1067948481
 GameObject:

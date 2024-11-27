@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Player2 : MonoBehaviour
+public class Player2 : MonoBehaviour, IDamageable
 {
     public float velocidadJugador2, poderSaltoJugador2;
     public float maximaVidaJugador2, vidaRestanteJugador2;
@@ -81,7 +81,7 @@ public class Player2 : MonoBehaviour
                 break;
         }
     }
-    public void TakeDamagePlayer2(float damagePlayer2)
+    public void TakeDamage(float damagePlayer2)
     {
         vidaRestanteJugador2 -= damagePlayer2;
         if(vidaRestanteJugador2 <= 0)
@@ -95,7 +95,7 @@ public class Player2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boss"))
         {
-            TakeDamagePlayer2(2);
+            TakeDamage(2);
         }
     }
 }
