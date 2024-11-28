@@ -57,6 +57,9 @@ EditorBuildSettings:
     path: Assets/Game2/Scenes/GME2_gameOver.unity
     guid: 23b12be2f714af247ad397f92185390f
   - enabled: 1
+    path: Assets/Game1/Scenes/GME1_end.unity
+    guid: eec9f75149c14ef468f2b290625904bc
+  - enabled: 1
     path: Assets/Game2/Scenes/GME2_end.unity
     guid: 0cf32f2f7346dd44899342ff0885cf24
   m_configObjects: {}

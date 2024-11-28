@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "USEK-Arcade-2024.sln"
+    "dotnet.defaultSolution": "USEK-Arcade.sln"
 }
