@@ -1,0 +1,388 @@
+fileFormatVersion: 2
+guid: 393db207c84489140909950f4e96faf2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Kla'ed - Scout - Destruction_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.7916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 153
+      width: 22
+      height: 24
+    spriteID: 441c876b8ac1e9e479a6d19c9ae0c257
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 153}
+  - name: Kla'ed - Scout - Destruction_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.7916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 185
+      width: 22
+      height: 24
+    spriteID: 9baa2cce19838504d86ceb915a04485f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 185}
+  - name: Kla'ed - Scout - Destruction_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.7916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 217
+      width: 22
+      height: 24
+    spriteID: 28be10d62e76afa44bbaba318a5e3be5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 217}
+  - name: Kla'ed - Scout - Destruction_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.7916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 34
+      y: 153
+      width: 22
+      height: 24
+    spriteID: 3bf4535eaaa74ea40b978a6cf2f2165c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 34, y: 153}
+  - name: Kla'ed - Scout - Destruction_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 105
+      width: 56
+      height: 40
+    spriteID: d604ece45128a7049a89ae811bb1c001
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 105}
+  - name: Kla'ed - Scout - Destruction_Frame_6
+    originalName: 
+    pivot: {x: 0.49180326, y: -0.26190478}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 55
+      width: 61
+      height: 42
+    spriteID: 8ccdfac141b5f494bbd3ad0e2f88dffc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 55}
+  - name: Kla'ed - Scout - Destruction_Frame_7
+    originalName: 
+    pivot: {x: 0.48387095, y: -0.23255813}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 62
+      height: 43
+    spriteID: 61be81c1b8ab4404b8154227de2d7fdd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Kla'ed - Scout - Destruction_Frame_4
+    originalName: 
+    pivot: {x: 0.52, y: -0.76}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 4
+      width: 25
+      height: 25
+    spriteID: 3651a22a5c1eb7d41b12ad7ab1cf7c33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 4}
+  - name: Kla'ed - Scout - Destruction_Frame_8
+    originalName: 
+    pivot: {x: 0.48, y: -0.31034482}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 55
+      width: 50
+      height: 29
+    spriteID: ea48aa26f0e13754e8962bbcbf12a940
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 55}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1670060854
+    name: Kla'ed - Scout - Destruction
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Kla'ed - Scout - Destruction_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 21
+        y: 19
+        width: 22
+        height: 24
+      spriteId: 441c876b8ac1e9e479a6d19c9ae0c257
+    - name: Kla'ed - Scout - Destruction_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 21
+        y: 19
+        width: 22
+        height: 24
+      spriteId: 9baa2cce19838504d86ceb915a04485f
+    - name: Kla'ed - Scout - Destruction_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 21
+        y: 19
+        width: 22
+        height: 24
+      spriteId: 28be10d62e76afa44bbaba318a5e3be5
+    - name: Kla'ed - Scout - Destruction_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 21
+        y: 19
+        width: 22
+        height: 24
+      spriteId: 3bf4535eaaa74ea40b978a6cf2f2165c
+    - name: Kla'ed - Scout - Destruction_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 4
+        y: 12
+        width: 56
+        height: 40
+      spriteId: d604ece45128a7049a89ae811bb1c001
+    - name: Kla'ed - Scout - Destruction_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 2
+        y: 11
+        width: 61
+        height: 42
+      spriteId: 8ccdfac141b5f494bbd3ad0e2f88dffc
+    - name: Kla'ed - Scout - Destruction_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 2
+        y: 10
+        width: 62
+        height: 43
+      spriteId: 61be81c1b8ab4404b8154227de2d7fdd
+    - name: Kla'ed - Scout - Destruction_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 19
+        y: 19
+        width: 25
+        height: 25
+      spriteId: 3651a22a5c1eb7d41b12ad7ab1cf7c33
+    - name: Kla'ed - Scout - Destruction_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 8
+        y: 9
+        width: 50
+        height: 29
+      spriteId: ea48aa26f0e13754e8962bbcbf12a940
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
