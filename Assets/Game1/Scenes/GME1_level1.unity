@@ -1159,7 +1159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1176,11 +1176,11 @@ PrefabInstance:
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 241954415}
+      objectReference: {fileID: 11500000, guid: 38767ec68df8ea74a8a728184bb0adae, type: 3}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 513917849}
+      objectReference: {fileID: 241954415}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1211,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TestInput
+      value: Move2
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1247,7 +1247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: InputManager, Assembly-CSharp
+      value: Player2, Game1
       objectReference: {fileID: 0}
     - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
       propertyPath: _players.Array.data[0]._buttonEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
