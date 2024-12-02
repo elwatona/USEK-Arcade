@@ -10,7 +10,7 @@ public class Player2 : MonoBehaviour, IDamageable
     float x, y;
     public Transform player2, posicionBala;
     public GameObject escudo;
-    GroundChecker groundchecker;
+    public GroundChecker groundchecker;
     Rigidbody2D rigidbody2;
     Vector2 direccionEscudo; 
     bool isFlipped2;

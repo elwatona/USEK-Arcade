@@ -10,7 +10,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public Transform player,posicionBala;
     public GameObject bala;
-    GroundChecker groundchecker;
+    public GroundChecker groundchecker;
     Rigidbody2D m_rigidbody;
 
     Vector2 dBala;
