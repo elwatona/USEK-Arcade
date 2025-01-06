@@ -11,9 +11,12 @@ public class GameSceneManager
     /* sceneName: nombre de la escena.
      *      Los nombres disponibles son: menu, level1, level2, boss, bonus1, bonus2, intro, gameOver, end
      */
-    public static void LoadScene(string sceneName)
+    public static void LoadScene(string sceneType)
     {
-        SceneManager.LoadScene($"{GameData.CurrentGameId}_{sceneName}");
+        string sceneNameString = $"{GameData.CurrentGameId}_{sceneType}";
+        bool sceneExists = CheckIfSceneExists(sceneNameString);
+        if (sceneExists)
+            SceneManager.LoadScene(sceneNameString);
     }
 
     //Método que carga la escena de menú del juego actual
@@ -23,6 +26,27 @@ public class GameSceneManager
         LoadScene("menu");
     }
 
+    public static void ExitGame() 
+    {
+        string sceneNameString = "ArcadeMenu";
+        bool sceneExists = CheckIfSceneExists(sceneNameString);
+        if (sceneExists)
+            SceneManager.LoadScene(sceneNameString);
+    }
+
+    static bool CheckIfSceneExists(string sceneNameString)
+    {
+        int buildIndex = SceneUtility.GetBuildIndexByScenePath(sceneNameString);
+        if (buildIndex != -1)
+            return true;
+        else
+        {
+            Debug.LogError($"Escena {sceneNameString} no encontrada en Build Settings");
+            return false;
+        }
+    }
+    
+    
     //Método que carga la siguiente escena del juego actual, cuando el jugador a superado una. En caso de ser la escena final, se regresa al menú
     //Llamar escribiendo: GameSceneManager.NextLevel()
     public static void NextLevel()
